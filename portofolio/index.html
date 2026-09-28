@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Rizqi Muhammad Fajar — Network & Creative Developer</title>
+<meta name="description" content="Portofolio Rizqi Muhammad Fajar — Network Engineer & Creative Developer. Sertifikasi, proyek, dan pengalaman lapangan.">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --bg: #0a0616;
+  --bg-2: #120a24;
+  --card: rgba(22, 14, 42, 0.7);
+  --border: rgba(139, 92, 246, 0.15);
+  --border-hover: rgba(167, 139, 250, 0.4);
+  --text: #ece6f8;
+  --text-dim: #b0a4cc;
+  --text-soft: #7a6f96;
+  --accent: #a78bfa;
+  --accent-2: #c4b5fd;
+  --accent-strong: #8b5cf6;
+  --gradient: linear-gradient(135deg, #8b5cf6, #a78bfa);
+  --gradient-text: linear-gradient(135deg, #e9d5ff, #c4b5fd, #a78bfa);
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(circle at 20% 10%, rgba(139, 92, 246, 0.08), transparent 45%),
+    radial-gradient(circle at 80% 80%, rgba(167, 139, 250, 0.06), transparent 50%);
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #160e2a; }
+::-webkit-scrollbar-thumb { background: #4c3575; border-radius: 10px; }
+::-webkit-scrollbar-thumb:hover { background: #6b46a8; }
+
+/* ============ NAVBAR ============ */
+.navbar {
+  position: sticky;
+  top: 0;
+  background: rgba(10, 6, 22, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2.5rem;
+  z-index: 1000;
+  border-bottom: 1px solid var(--border);
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.logo {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: -0.3px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.logo-mark {
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  background: var(--gradient);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: 800;
+  font-size: 0.9rem;
+  box-shadow: 0 4px 14px rgba(139, 92, 246, 0.4);
+}
+.logo-name {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+.logo-name .first { font-size: 0.95rem; font-weight: 700; }
+.logo-name .role {
+  font-size: 0.68rem;
+  color: var(--text-soft);
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-dim);
+  font-weight: 500;
+  transition: color 0.25s;
+  font-size: 0.92rem;
+  position: relative;
+}
+.nav-links a:hover { color: var(--accent-2); }
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--gradient);
+  border-radius: 2px;
+  transition: width 0.3s;
+}
+.nav-links a:hover::after { width: 100%; }
+
+/* ============ HERO ============ */
+.hero {
+  min-height: 88vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 2.5rem;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+.hero-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3.5rem;
+  width: 100%;
+}
+.hero-content { flex: 1.2; min-width: 300px; }
+
+.hero-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  background: rgba(139, 92, 246, 0.1);
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  border-radius: 50px;
+  font-size: 0.78rem;
+  color: var(--accent-2);
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  margin-bottom: 1.5rem;
+}
+.hero-tag .dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #4ade80;
+  box-shadow: 0 0 8px #4ade80;
+  animation: pulseDot 2s ease-in-out infinite;
+}
+@keyframes pulseDot {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+.hero-content h1 {
+  font-size: clamp(2rem, 4.5vw, 3.4rem);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -1px;
+  margin-bottom: 1.2rem;
+}
+.hero-content .highlight {
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero-content p.lead {
+  font-size: 1.05rem;
+  max-width: 540px;
+  margin-bottom: 2rem;
+  color: var(--text-dim);
+  line-height: 1.7;
+}
+
+.btn-group {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.btn {
+  padding: 0.85rem 1.9rem;
+  border-radius: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.92rem;
+  font-family: inherit;
+}
+.btn-primary {
+  background: var(--gradient);
+  color: white;
+  box-shadow: 0 8px 20px rgba(139, 92, 246, 0.35);
+}
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 30px rgba(139, 92, 246, 0.5);
+}
+.btn-outline {
+  border: 1.5px solid rgba(167, 139, 250, 0.4);
+  background: transparent;
+  color: var(--accent-2);
+}
+.btn-outline:hover {
+  background: rgba(167, 139, 250, 0.1);
+  transform: translateY(-3px);
+  border-color: var(--accent);
+}
+
+/* ============ PROFILE PHOTO ============ */
+.profile-wrapper {
+  flex: 0.9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  min-width: 280px;
+}
+.avatar-frame {
+  position: relative;
+  width: 320px;
+  height: 320px;
+  border-radius: 24px;
+  background: linear-gradient(135deg, #8b5cf6, #a78bfa);
+  padding: 4px;
+  box-shadow: 0 25px 50px -12px rgba(139, 92, 246, 0.5);
+  transition: transform 0.4s ease;
+}
+.avatar-frame::before {
+  content: '';
+  position: absolute;
+  inset: -20px;
+  border-radius: 32px;
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.25), transparent 70%);
+  z-index: -1;
+  animation: glowPulse 4s ease-in-out infinite;
+}
+@keyframes glowPulse {
+  0%, 100% { opacity: 0.6; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.04); }
+}
+.avatar-frame:hover { transform: translateY(-6px); }
+.avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+  display: block;
+}
+
+/* ============ SECTIONS ============ */
+section {
+  padding: 5rem 2.5rem;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+.section-label {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.8rem;
+}
+.section-title {
+  font-size: clamp(1.7rem, 3.5vw, 2.4rem);
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+.section-title span {
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* ============ CARDS ============ */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+  gap: 1.75rem;
+}
+
+.card {
+  background: var(--card);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  transition: all 0.35s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+  display: flex;
+  flex-direction: column;
+}
+.card:hover {
+  transform: translateY(-8px);
+  border-color: var(--border-hover);
+  box-shadow: 0 25px 50px -12px rgba(139, 92, 246, 0.35);
+  background: rgba(30, 20, 55, 0.85);
+}
+
+.card-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  cursor: pointer;
+  transition: transform 0.6s ease;
+  background: #1e1638;
+}
+.card:hover .card-img { transform: scale(1.04); }
+
+.card-content {
+  padding: 1.4rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.card-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--text);
+  letter-spacing: -0.2px;
+  line-height: 1.35;
+}
+.card-issuer {
+  font-size: 0.8rem;
+  color: var(--accent);
+  font-weight: 500;
+  margin-bottom: 0.7rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.card-desc {
+  color: var(--text-dim);
+  font-size: 0.86rem;
+  line-height: 1.65;
+  margin-bottom: 1rem;
+  flex: 1;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: rgba(139, 92, 246, 0.12);
+  border: 1px solid rgba(139, 92, 246, 0.25);
+  padding: 0.3rem 0.85rem;
+  border-radius: 50px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--accent-2);
+  align-self: flex-start;
+}
+
+.tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 0.9rem;
+}
+.tech {
+  background: rgba(76, 53, 117, 0.35);
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  padding: 0.25rem 0.75rem;
+  border-radius: 50px;
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: var(--text-dim);
+}
+
+/* ============ LIGHTBOX ============ */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 2100;
+  background-color: rgba(5, 3, 12, 0.94);
+  backdrop-filter: blur(16px);
+  justify-content: center;
+  align-items: center;
+  cursor: zoom-out;
+  padding: 40px 20px;
+}
+.modal-img {
+  max-width: 88%;
+  max-height: 88%;
+  border-radius: 16px;
+  box-shadow: 0 0 60px rgba(139, 92, 246, 0.4);
+  border: 1px solid rgba(167, 139, 250, 0.3);
+}
+.close-modal {
+  position: absolute;
+  top: 24px;
+  right: 32px;
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  font-size: 1.8rem;
+  color: var(--text-dim);
+  background: rgba(30, 20, 55, 0.8);
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  transition: all 0.25s;
+  cursor: pointer;
+  line-height: 1;
+}
+.close-modal:hover {
+  color: #fff;
+  background: var(--accent-strong);
+  transform: rotate(90deg);
+}
+
+/* ============ CONTACT ============ */
+.contact-section {
+  background: linear-gradient(145deg, rgba(30, 20, 55, 0.7), rgba(15, 9, 30, 0.7));
+  border-radius: 24px;
+  padding: 3rem;
+  border: 1px solid var(--border);
+  backdrop-filter: blur(10px);
+}
+.contact-flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2.5rem;
+}
+.contact-info { flex: 1; min-width: 260px; }
+.contact-info h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.6rem;
+  letter-spacing: -0.3px;
+}
+.contact-info p {
+  color: var(--text-dim);
+  font-size: 0.92rem;
+  line-height: 1.7;
+  margin-bottom: 0.6rem;
+}
+.contact-info .contact-line {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 0.7rem;
+  color: var(--text-dim);
+  font-size: 0.9rem;
+}
+.contact-line i { color: var(--accent); width: 16px; }
+.contact-line a { color: var(--text-dim); text-decoration: none; transition: color 0.2s; }
+.contact-line a:hover { color: var(--accent-2); }
+
+.social-icons {
+  display: flex;
+  gap: 12px;
+  margin-top: 1.2rem;
+}
+.social-icons a {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: rgba(139, 92, 246, 0.1);
+  border: 1px solid var(--border);
+  color: var(--text-dim);
+  display: grid;
+  place-items: center;
+  font-size: 1.05rem;
+  transition: all 0.25s;
+  text-decoration: none;
+}
+.social-icons a:hover {
+  color: #fff;
+  background: var(--gradient);
+  border-color: transparent;
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(139, 92, 246, 0.4);
+}
+
+/* ============ FOOTER ============ */
+footer {
+  text-align: center;
+  padding: 2.5rem 2rem;
+  border-top: 1px solid var(--border);
+  color: var(--text-soft);
+  font-size: 0.85rem;
+}
+footer .heart { color: #ec4899; }
+
+/* ============ FADE ANIMATION ============ */
+.fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ============ RESPONSIVE ============ */
+@media (max-width: 900px) {
+  .navbar { padding: 0.9rem 1.5rem; }
+  .nav-links { gap: 1.3rem; }
+  .nav-links a { font-size: 0.85rem; }
+  .logo-name .role { display: none; }
+
+  .hero-container { flex-direction: column-reverse; text-align: center; }
+  .hero-content { text-align: center; }
+  .hero-content p.lead { margin-left: auto; margin-right: auto; }
+  .btn-group { justify-content: center; }
+  .avatar-frame { width: 260px; height: 260px; }
+  .section-title { font-size: 1.8rem; }
+  .contact-flex { flex-direction: column; }
+  section { padding: 3.5rem 1.5rem; }
+  .contact-section { padding: 2rem; }
+}
+
+@media (max-width: 500px) {
+  .avatar-frame { width: 220px; height: 220px; }
+  .nav-links { gap: 1rem; }
+  .nav-links a { font-size: 0.8rem; }
+  .logo-mark { width: 30px; height: 30px; font-size: 0.8rem; }
+}
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="logo">
+    <div class="logo-mark">RF</div>
+    <div class="logo-name">
+      <span class="first">Rizqi Muhammad Fajar</span>
+      <span class="role">Network &amp; Creative Dev</span>
+    </div>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#certificates">Sertifikat</a></li>
+    <li><a href="#projects">Proyek</a></li>
+    <li><a href="#contact">Kontak</a></li>
+  </ul>
+</nav>
+
+<main>
+  <!-- HERO -->
+  <section id="home" class="hero fade-up">
+    <div class="hero-container">
+      <div class="hero-content">
+        <span class="hero-tag">
+          <span class="dot"></span> Tersedia untuk kolaborasi
+        </span>
+        <h1>
+          Rizqi Muhammad <span class="highlight">Fajar</span><br>
+          Network &amp; <span class="highlight">Creative Developer</span>
+        </h1>
+        <p class="lead">
+          Merawat server, mengelola jaringan, dan memastikan perangkat keras tetap andal.
+          Portofolio ini merangkum sertifikasi, proyek, serta pengalaman lapangan — dari
+          pelatihan ISP hingga perbaikan elektronik level komponen.
+        </p>
+        <div class="btn-group">
+          <a href="#certificates" class="btn btn-primary">
+            <i class="fas fa-certificate"></i> Lihat Sertifikat
+          </a>
+          <a href="#projects" class="btn btn-outline">
+            <i class="fas fa-rocket"></i> Lihat Proyek
+          </a>
+        </div>
+      </div>
+      <div class="profile-wrapper">
+        <div class="avatar-frame">
+          <img class="avatar-img" src="img3/aku2.jpg" alt="Foto Rizqi Muhammad Fajar">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERTIFIKAT -->
+  <section id="certificates" class="fade-up">
+    <div class="section-header">
+      <span class="section-label">Keahlian Terverifikasi</span>
+      <h2 class="section-title"><span>Sertifikat</span> Profesional</h2>
+    </div>
+    <div id="certificate-grid" class="grid-container"></div>
+  </section>
+
+  <!-- PROYEK -->
+  <section id="projects" class="fade-up">
+    <div class="section-header">
+      <span class="section-label">Portofolio Kerja</span>
+      <h2 class="section-title"><span>Proyek</span> Unggulan</h2>
+    </div>
+    <div id="project-grid" class="grid-container"></div>
+  </section>
+
+  <!-- KONTAK -->
+  <section id="contact" class="fade-up">
+    <div class="contact-section">
+      <div class="contact-flex">
+        <div class="contact-info">
+          <h3>Mari Terhubung</h3>
+          <p>
+            Terbuka untuk diskusi profesional, freelance, kolaborasi teknis,
+            atau sekadar berbagi wawasan seputar networking dan infrastruktur.
+          </p>
+          <div class="social-icons">
+            <a href="https://github.com/MySinon" target="_blank" rel="noopener" aria-label="GitHub">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/rizqi-muhammad-fajar-4200bb3b0" target="_blank" rel="noopener" aria-label="LinkedIn">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="https://www.instagram.com/sinon_xy" target="_blank" rel="noopener" aria-label="Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="mailto:rizqimuhammadfajar5980@gmail.com" aria-label="Email">
+              <i class="fas fa-envelope"></i>
+            </a>
+          </div>
+        </div>
+        <div class="contact-info">
+          <div class="contact-line">
+            <i class="fas fa-envelope"></i>
+            <a href="mailto:rizqimuhammadfajar5980@gmail.com">rizqimuhammadfajar5980@gmail.com</a>
+          </div>
+          <div class="contact-line">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Pandeglang, Banten — Remote friendly</span>
+          </div>
+          <div class="contact-line">
+            <i class="fas fa-award"></i>
+            <span>7 Sertifikat &amp; 3 Proyek Terverifikasi</span>
+          </div>
+          <div class="contact-line">
+            <i class="fas fa-circle-check" style="color:#4ade80;"></i>
+            <span style="color:#4ade80;">Available for work</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>© 2026 Rizqi Muhammad Fajar — Dibuat dengan <i class="fas fa-heart heart"></i> di Pandeglang</p>
+</footer>
+
+<!-- Lightbox -->
+<div id="imageModal" class="modal">
+  <span class="close-modal">&times;</span>
+  <img class="modal-img" id="modalImage" alt="Preview">
+</div>
+
+<script>
+/* =========================================================
+   DATA SERTIFIKAT
+   ========================================================= */
+const certificatesData = [
+  { id: 1, title: "MTCNA", issuer: "MikroTik Academy", image: "img/MTCNA.jpg", description: "Konfigurasi RouterOS, firewall, dan bandwidth management." },
+  { id: 2, title: "CCNA", issuer: "Cisco Netacad", image: "img/CCNA.jpg", description: "Perutean, switching, dan keamanan jaringan enterprise." },
+  { id: 3, title: "Python Fundamental", issuer: "Aguna Course", image: "img/AnggunaPythin.jpg", description: "Otomatisasi dan scripting untuk jaringan serta keamanan." },
+  { id: 4, title: "Cybersecurity", issuer: "Dicoding × Cisco Netacad", image: "img/cyberS.jpg", description: "Ancaman siber, enkripsi, dan incident response." },
+  { id: 5, title: "Dasar Back-End", issuer: "Dicoding", image: "img/DicodingBCKE.jpg", description: "Pengembangan dashboard interaktif untuk monitoring." },
+  { id: 6, title: "Dasar AI", issuer: "Dicoding", image: "img/DicodingDAI.jpg", description: "Machine learning dasar, etika AI, dan pattern recognition." },
+  { id: 7, title: "Microsoft Excel", issuer: "Coursera", image: "img/corseraXccel.jpg", description: "Pengolahan data, log monitoring, dan pivot table." }
+];
+
+/* =========================================================
+   DATA PROYEK
+   ========================================================= */
+const projectsData = [
+  {
+    id: 1,
+    title: "Pemahaman Server & Infrastruktur",
+    description: "Familiar dengan Windows Server, Linux (Ubuntu/Debian), virtualisasi (VMware/VirtualBox), serta layanan DNS, DHCP, dan web server sederhana.",
+    tech: ["Debian", "VirtualBox", "Server"],
+    image: "img2/Server.png",
+    link: null
+  },
+  {
+    id: 2,
+    title: "OAA Application",
+    description: "Aplikasi berbasis web dengan integrasi database untuk menganalisis perkembangan siswa, dilengkapi fitur AI untuk analisis otomatis.",
+    tech: ["HTML", "Firebase", "AI"],
+    image: "img2/oaa.png",
+    link: null
+  },
+  {
+    id: 3,
+    title: "Perancangan & Simulasi Jaringan",
+    description: "Konfigurasi Router Mikrotik yang terhubung antar LAN, server DMZ, switch manageable, dan client.",
+    tech: ["Cisco", "Mikrotik", "DMZ"],
+    image: "img2/Lsp.png",
+    link: null
+  }
+];
+
+/* =========================================================
+   RENDER SERTIFIKAT
+   ========================================================= */
+function renderCertificates() {
+  const container = document.getElementById('certificate-grid');
+  if (!container) return;
+  container.innerHTML = '';
+
+  certificatesData.forEach(cert => {
+    const card = document.createElement('div');
+    card.className = 'card';
+    card.innerHTML = `
+      <img class="card-img" src="${cert.image}" alt="${cert.title}" data-large="${cert.image}" loading="lazy">
+      <div class="card-content">
+        <div class="card-title">${cert.title}</div>
+        <div class="card-issuer"><i class="fas fa-building"></i> ${cert.issuer}</div>
+        <p class="card-desc">${cert.description}</p>
+        <span class="badge"><i class="fas fa-check-circle"></i> Tersertifikasi</span>
+      </div>
+    `;
+    container.appendChild(card);
+  });
+  attachLightboxEvents();
+}
+
+/* =========================================================
+   RENDER PROYEK
+   ========================================================= */
+function renderProjects() {
+  const container = document.getElementById('project-grid');
+  if (!container) return;
+  container.innerHTML = '';
+
+  projectsData.forEach(proj => {
+    const techHtml = proj.tech.map(t => `<span class="tech">${t}</span>`).join('');
+    const linkHtml = proj.link
+      ? `<a href="${proj.link}" target="_blank" rel="noopener" class="btn btn-outline" style="padding:0.5rem 1.1rem; font-size:0.8rem; margin-top:1rem;">
+           <i class="fas fa-arrow-up-right-from-square"></i> Lihat Proyek
+         </a>`
+      : `<span class="badge" style="margin-top:1rem;"><i class="fas fa-lock"></i> Dokumentasi Internal</span>`;
+
+    const card = document.createElement('div');
+    card.className = 'card';
+    card.innerHTML = `
+      <img class="card-img" src="${proj.image}" alt="${proj.title}" data-large="${proj.image}" loading="lazy">
+      <div class="card-content">
+        <div class="card-title">${proj.title}</div>
+        <p class="card-desc">${proj.description}</p>
+        <div class="tech-stack">${techHtml}</div>
+        ${linkHtml}
+      </div>
+    `;
+    container.appendChild(card);
+  });
+  attachLightboxEvents();
+}
+
+/* =========================================================
+   LIGHTBOX
+   ========================================================= */
+function attachLightboxEvents() {
+  const modal = document.getElementById('imageModal');
+  const modalImg = document.getElementById('modalImage');
+  const closeSpan = document.querySelector('.close-modal');
+  const allImages = document.querySelectorAll('.card-img');
+
+  allImages.forEach(img => {
+    img.addEventListener('click', function(e) {
+      e.stopPropagation();
+      modal.style.display = 'flex';
+      modalImg.src = this.getAttribute('data-large') || this.src;
+    });
+  });
+
+  if (closeSpan) closeSpan.onclick = () => modal.style.display = 'none';
+  modal.onclick = (e) => { if (e.target === modal) modal.style.display = 'none'; };
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.style.display === 'flex') modal.style.display = 'none';
+  });
+}
+
+/* =========================================================
+   SCROLL ANIMATION
+   ========================================================= */
+function initScrollAnimations() {
+  const fades = document.querySelectorAll('.fade-up');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: "0px 0px -30px 0px" });
+
+  fades.forEach(el => observer.observe(el));
+  document.querySelector('#home')?.classList.add('visible');
+}
+
+/* =========================================================
+   SMOOTH SCROLL
+   ========================================================= */
+function setupSmoothScroll() {
+  document.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener('click', function(e) {
+      const hash = this.getAttribute('href');
+      if (hash && hash.length > 1) {
+        const target = document.getElementById(hash.substring(1));
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }
+    });
+  });
+}
+
+/* =========================================================
+   INIT
+   ========================================================= */
+function init() {
+  renderCertificates();
+  renderProjects();
+  initScrollAnimations();
+  setupSmoothScroll();
+}
+init();
+</script>
+</body>
+</html>
